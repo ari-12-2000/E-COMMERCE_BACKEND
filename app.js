@@ -17,7 +17,6 @@ app.use((req, res, next) => {
 
 app.get('/items', async (req, res) => {
   const storedItems = await getStoredItems();
-  await new Promise((resolve, reject) => setTimeout(() => resolve(), 1000));
   res.json({ items: storedItems });
 });
 
